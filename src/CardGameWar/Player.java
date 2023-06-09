@@ -16,9 +16,9 @@ ii.	Methods
 
 	 */
 
-	private List<Card> hand;// List to store the cards in player's hand
-	private int score;// Player's score
-	private String name;// Player's name
+	private List<Card> hand;
+	private int score;
+	private String name;
 	
 	//getter and setter
 	public int getScore() {
@@ -39,9 +39,9 @@ ii.	Methods
 	
 	//Constructor
 	public Player(List<Card> hand, int score, String name) {
-		this.hand = new ArrayList<>(); // Initialize an empty hand
-		this.score = 0;// Set the initial score to 0
-		this.name = name;// Set the player's name
+		this.hand = new ArrayList<>(); 
+		this.score = 0;
+		this.name = name;
 	}
 	
     // Method to describe the player and the cards in their hand
@@ -50,7 +50,7 @@ ii.	Methods
 	        System.out.println("Score: " + score);
 	        System.out.println("Cards in " + name + "`s hand:");
 	        for (Card card : hand) {
-	            card.describe();// Call the describe method for each card in the hand
+	            card.describe();
 	        
 	        }
 	}
@@ -58,7 +58,7 @@ ii.	Methods
 	// Method to flip and return the top card from the hand
 	 public Card flip() {
 	        if (!hand.isEmpty()) {
-	            return hand.remove(0);// Remove and return the first card from the hand
+	            return hand.remove(0);
 	        } else {
 	            System.out.println("No cards in hand.");
 	            return null;
@@ -67,9 +67,9 @@ ii.	Methods
 
 	// Method to draw a card from the deck and add it to the hand
 	    public void draw(Deck deck) {
-	        Card drawnCard = deck.draw();// Draw a card from the deck
+	        Card drawnCard = deck.draw();
 	        if (drawnCard != null) {
-	            hand.add(drawnCard);// Add the drawn card to the hand
+	            hand.add(drawnCard);
 	        }
 	    }
 

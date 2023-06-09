@@ -13,6 +13,8 @@ f)	Print the final score of each player and either “Player 1”, “Player 2�
 
  */
 	public static void main(String[] args) {
+		
+		
 		// Instantiate a Deck and two Players
 		Deck deck = new Deck();
 		Player p1 = new Player(null, 0, "Hasan");
@@ -27,14 +29,17 @@ f)	Print the final score of each player and either “Player 1”, “Player 2�
         }
         
      // Flip cards for each player 26 times
+        int roundnum = 0;
         for (int i = 0; i < 26; i++) {
+        	roundnum++;
+        	System.out.println("Round : " + roundnum);
             Card p1card = p1.flip();
             Card p2card = p2.flip();
 	
          // Print the flip cards
-            System.out.println("Player 1 flips: ");
+            System.out.println(p1.getName()+" flips: ");
             p1card.describe();
-            System.out.println("Player 2 flips: ");
+            System.out.println(p2.getName()+ " flips: ");
             p2card.describe();
         
 
@@ -45,19 +50,19 @@ f)	Print the final score of each player and either “Player 1”, “Player 2�
 
             if (value1 > value2) {
                 p1.incrementScore();
-                System.out.println("Player 1 wins this turn!");
+                System.out.println(p1.getName()+" wins this turn!");
 
             } else if (value1 < value2) {
                 p2.incrementScore();
-                System.out.println("Player 2 wins this turn!");
+                System.out.println(p2.getName()+" wins this turn!");
             }else {
                     System.out.println("continue");
             }
         }
         
         // Print the updated scores after each turn
-        System.out.println("Player 1 score: " + p1.getScore());
-        System.out.println("Player 2 score: " + p2.getScore());
+        System.out.println(p1.getName()+" score: " + p1.getScore());
+        System.out.println(p2.getName()+" score: " + p2.getScore());
     
     }
 
@@ -68,9 +73,9 @@ f)	Print the final score of each player and either “Player 1”, “Player 2�
 
     // Determine the winner or if it's a draw
     if (score1 > score2) {
-        System.out.println("Player 1 wins!");
+        System.out.println(p1.getName()+" wins!");
     } else if (score1 < score2) {
-        System.out.println("Player 2 wins!");
+        System.out.println(p2.getName()+" wins!");
     } else {
         System.out.println("It's a draw!");
     }
